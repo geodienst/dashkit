@@ -4,7 +4,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@geodienst/geodashboard": ["./dist/geodienst/geodashboard"]
+      "@geodienst/geodashboard": ["./dist/geodienst/geodashboard"],
+      "@geodienst/geodashboard/*": ["./dist/geodienst/geodashboard/*"]
     },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,

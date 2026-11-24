@@ -7,6 +7,7 @@
   },
   "sideEffects": false,
   "exports": {
-    ".": "./src/public-api.ts"
+    ".": "./src/public-api.ts",
+    "./testing": "./testing/src/public-api.ts"
   }
 }
