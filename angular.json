@@ -2,9 +2,39 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "575280fd-0dc1-4c74-929f-d5724f5f0dbe"
   },
   "newProjectRoot": "projects",
   "projects": {
+    "@geodienst/geodashboard": {
+      "projectType": "library",
+      "root": "projects/geodienst/geodashboard",
+      "sourceRoot": "projects/geodienst/geodashboard",
+      "prefix": "gd",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:library",
+          "options": {
+            "tsConfig": "projects/geodienst/geodashboard/tsconfig.lib.json",
+            "outputPath": "dist/geodienst/geodashboard"
+          },
+          "configurations": {
+            "production": {},
+            "development": {
+              "compilationMode": "full",
+              "declarationMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "tsConfig": "projects/geodienst/geodashboard/tsconfig.spec.json"
+          }
+        }
+      }
+    }
   }
 }

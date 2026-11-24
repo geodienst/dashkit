@@ -3,6 +3,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@geodienst/geodashboard": ["./dist/geodienst/geodashboard"]
+    },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -19,5 +22,13 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/geodienst/geodashboard/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/geodienst/geodashboard/tsconfig.spec.json"
+    }
+  ]
 }
