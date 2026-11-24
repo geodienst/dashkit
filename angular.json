@@ -17,7 +17,9 @@
           "builder": "@angular/build:library",
           "options": {
             "tsConfig": "projects/geodienst/geodashboard/tsconfig.lib.json",
-            "outputPath": "dist/geodienst/geodashboard"
+            "outputPath": "dist/geodienst/geodashboard",
+            "assets": [{ "glob": "*.xlf", "input": "projects/geodienst/geodashboard/src/lib/locale", "output": "locale" }],
+            "allowedNonPeerDependencies": ["marked"]
           },
           "configurations": {
             "production": {},
