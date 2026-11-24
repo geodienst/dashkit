@@ -101,9 +101,9 @@ Angular updates: the library is updated first (peer dependency ranges, release),
 
 1. Bump `version` in `projects/geodienst/geodashboard/package.json`.
 2. Update `CHANGELOG.md`.
-3. Commit, then `git tag v<version>` and `git push --tags`.
-4. `npm run build`, then `cd dist/geodienst/geodashboard` and `npm pack`. Always pack from `dist/`, never from the library folder.
-5. Until a registry is chosen, the apps install the tarball from their `vendor/` folder: replace the old tarball there with the new one and run `npm install ./vendor/<tarball>`.
+3. Commit and push, then `git tag v<version>` and `git push --tags`.
+4. CI (`.github/workflows/ci.yml`) tests, builds and packs the tag, and creates a GitHub release with the tarball attached. It fails if the tag doesn't match the version.
+5. Until a registry is chosen, the apps install the tarball from their `vendor/` folder. Delete the old tarball there, then run `gh release download v<version> --repo geodienst/geodashboard --pattern "*.tgz" --dir vendor` and `npm install ./vendor/<tarball>`.
 
 ## Git
 
