@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <ng-content select="[headerStart]" />
+  @if (logo()) {
+    @if (logoLink()) {
+      <a [href]="logoLink()" target="_blank" rel="noopener"><img [src]="logo()" alt="" /></a>
+    } @else {
+      <img [src]="logo()" alt="" />
+    }
+  }
+  <div>
+    <h1>{{ title() }}</h1>
+    @if (subtitle()) {
+      <p>{{ subtitle() }}</p>
+    }
+  </div>
+  <ng-content />
+</mat-toolbar>

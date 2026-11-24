@@ -1,0 +1,8 @@
+<div class="ring">
+  <!-- Small: 36px ring + 2 × 4px padding = 44px, as high as a card with a title-large line and 8px padding (e.g. a collapsed legend). -->
+  <mat-progress-spinner mode="determinate" [value]="value()" [diameter]="small() ? 36 : 64" />
+  <span class="count">{{ count() }}</span>
+</div>
+@if (!small()) {
+  <span>of {{ total() }}</span>
+}

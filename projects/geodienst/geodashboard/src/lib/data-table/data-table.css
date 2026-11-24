@@ -1,0 +1,22 @@
+/* position: relative anchors the download button to the bottom-right corner of the table. */
+:host {
+  display: block;
+  position: relative;
+}
+
+/* Scrolls inside its own box, so the button doesn't scroll with the rows; the header row stays on top while scrolling. */
+.scroll {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Headers stay on one line; their column grows instead. */
+th {
+  white-space: nowrap;
+}
+
+button {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}

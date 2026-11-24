@@ -1,0 +1,21 @@
+@if (title()) {
+  <h2>{{ title() }}</h2>
+}
+@if (subtitle()) {
+  <p>{{ subtitle() }}</p>
+}
+<mat-button-toggle-group vertical multiple hideMultipleSelectionIndicator [value]="selected()" (change)="selected.set($event.value)">
+  @for (country of countries(); track country) {
+    <div class="row">
+      <mat-button-toggle [value]="country">
+        <span class="label">{{ country }}@if (!hideCount()) { ({{ counts()[country] }})}</span>
+        <mat-progress-bar mode="determinate" [value]="(counts()[country] / max()) * 100" />
+      </mat-button-toggle>
+      @if (buttonCountries().includes(country)) {
+        <button mat-icon-button [matTooltip]="buttonLabel()" [attr.aria-label]="buttonLabel()" (click)="buttonClick.emit(country)">
+          <mat-icon>{{ buttonIcon() }}</mat-icon>
+        </button>
+      }
+    </div>
+  }
+</mat-button-toggle-group>

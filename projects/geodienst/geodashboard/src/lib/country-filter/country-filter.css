@@ -1,0 +1,78 @@
+/*
+ * The title on top, below it the bars fill the rest of the parent: full width,
+ * and spread over the remaining height. min-height lets the component grow
+ * beyond the parent when there are too many countries; the side panel then scrolls.
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/*
+ * Title and subtitle as in the header bar. The side padding lines them up with
+ * the country names: the group's 8px padding plus the toggle's 12px label padding.
+ */
+h2 {
+  margin: 0;
+  padding: 16px 20px 4px;
+  font: var(--mat-sys-title-large);
+}
+
+p {
+  margin: 0;
+  padding: 0 20px 8px;
+  font: var(--mat-sys-body-medium);
+  opacity: 0.8;
+}
+
+/* Unselected rows are light green like the panel; selected rows take the full green. */
+mat-button-toggle-group {
+  flex: 1;
+  width: 100%;
+  /* Count the group's border and padding into the 100%, otherwise it overflows and scrolls. */
+  box-sizing: border-box;
+  /* Space around every row, so the panel's green shows between them. */
+  padding: 8px;
+  gap: 8px;
+  --mat-button-toggle-background-color: var(--mat-sys-primary-container);
+  --mat-button-toggle-text-color: var(--mat-sys-on-primary-container);
+  --mat-button-toggle-state-layer-color: var(--mat-sys-on-primary-container);
+  /* The gaps separate the rows now, so no border lines. */
+  --mat-button-toggle-divider-color: transparent;
+  --mat-button-toggle-height: 32px;
+  --mat-button-toggle-shape: var(--mat-sys-corner-none);
+  --mat-button-toggle-selected-state-background-color: var(--mat-sys-primary);
+  --mat-button-toggle-selected-state-text-color: var(--mat-sys-on-primary);
+  --mat-progress-bar-active-indicator-color: var(--mat-sys-primary);
+  --mat-progress-bar-track-color: transparent;
+}
+
+/* Each row takes an equal share of the free height and holds the toggle plus its optional button. */
+.row {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* The toggle fills the row next to the button; flex stretches its button so the whole toggle is clickable. */
+mat-button-toggle {
+  flex: 1;
+  align-self: stretch;
+  display: flex;
+}
+
+/* The bar takes the selected toggle's text colour. */
+.mat-button-toggle-checked {
+  --mat-progress-bar-active-indicator-color: var(--mat-sys-on-primary);
+}
+
+/* Buttons centre their text; bars start on the left, so the label does too. */
+.label {
+  display: block;
+  text-align: start;
+}
+
+mat-progress-bar {
+  margin-bottom: 8px;
+}

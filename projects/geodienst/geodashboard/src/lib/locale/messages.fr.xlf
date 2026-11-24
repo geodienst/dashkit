@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="dataTable.download" datatype="html">
+        <source>Download CSV</source>
+        <target>Télécharger en CSV</target>
+      </trans-unit>
+      <trans-unit id="menu.menu" datatype="html">
+        <source>Menu</source>
+        <target>Menu</target>
+      </trans-unit>
+      <trans-unit id="infoButton.help" datatype="html">
+        <source>Help</source>
+        <target>Aide</target>
+      </trans-unit>
+      <trans-unit id="itemList.search" datatype="html">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="legend.other" datatype="html">
+        <source>Other</source>
+        <target>Autres</target>
+      </trans-unit>
+      <trans-unit id="legend.title" datatype="html">
+        <source>Legend</source>
+        <target>Légende</target>
+      </trans-unit>
+      <trans-unit id="mapView.reset" datatype="html">
+        <source>Reset</source>
+        <target>Réinitialiser</target>
+      </trans-unit>
+      <trans-unit id="multiSelectFilter.selectAll" datatype="html">
+        <source>Select all</source>
+        <target>Tout sélectionner</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

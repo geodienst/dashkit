@@ -1,0 +1,13 @@
+mat-form-field {
+  /* Count the padding into the 100%, otherwise the field overflows the list. */
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+}
+
+/* Centers any given icon in Material's icon slot. */
+[matListItemIcon] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

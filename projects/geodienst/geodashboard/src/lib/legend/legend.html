@@ -1,0 +1,30 @@
+<div class="title">
+  @if (collapsed()) {
+    <mat-icon>legend_toggle</mat-icon>
+  }
+  <span i18n="@@legend.title">Legend</span>
+</div>
+@if (!collapsed()) {
+  @for (icon of labelled(); track icon) {
+    <div class="entry">
+      <gd-marker-icon [icon]="icon" />
+      <span class="label">{{ labels()[icon] }}</span>
+    </div>
+  }
+  @if (others().length) {
+    <mat-divider />
+    <div class="other">
+      <span class="heading" i18n="@@legend.other">Other</span>
+      <div class="other-icons">
+        @for (icon of others(); track icon) {
+          <div class="entry" [matTooltip]="icon">
+            <gd-marker-icon [icon]="icon" />
+            @if (showOtherNames()) {
+              <span class="label">{{ icon }}</span>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  }
+}

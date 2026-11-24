@@ -1,0 +1,11 @@
+/* The width sits on the host, so a flex parent (e.g. a narrow header) can shrink the filter. */
+:host {
+  display: block;
+  width: 240px;
+  min-width: 0;
+}
+
+mat-form-field {
+  --mat-form-field-filled-container-color: var(--mat-sys-primary-container);
+  width: 100%;
+}

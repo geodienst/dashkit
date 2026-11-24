@@ -1,0 +1,17 @@
+.marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--mat-sys-tertiary);
+  border: 1px solid var(--mat-sys-on-tertiary);
+  color: var(--mat-sys-on-tertiary);
+}
+
+mat-icon {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}

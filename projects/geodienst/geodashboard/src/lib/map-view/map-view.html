@@ -1,0 +1,76 @@
+@if (basemapStyle(); as style) {
+  <mgl-map
+    [mapStyle]="style"
+    [center]="[0, 20]"
+    [zoom]="1.5"
+    [locale]="locale"
+    [fitBounds]="bounds()"
+    [fitBoundsOptions]="fitBoundsOptions"
+    (mapLoad)="onMapLoad($event)"
+    (moveStart)="onMoveStart($event)"
+  >
+    <mgl-control mglScale position="top-right" />
+    <mgl-control mglNavigation [showCompass]="false" position="top-right" />
+    <mgl-control mglGeolocate position="top-right" />
+    <!--
+      The caller's buttons, below MapLibre's own controls. MapLibre stacks controls in the order they are added;
+      controls inside an @for would be added before the static ones above, so all buttons share one static control.
+    -->
+    <mgl-control position="top-right">
+      <div class="map-buttons">
+        @for (button of buttons(); track button.id) {
+          <button
+            matButton="elevated"
+            class="map-button"
+            [class.icon-only]="iconOnly()"
+            [attr.aria-label]="button.label"
+            (click)="buttonClick.emit(button.id)"
+          >
+            <mat-icon>{{ button.icon }}</mat-icon>
+            @if (!iconOnly()) {
+              <span>{{ button.label }}</span>
+            }
+          </button>
+        }
+      </div>
+    </mgl-control>
+    @for (item of shownItems(); track $index) {
+      <mgl-marker [lngLat]="[item.location.lon, item.location.lat]">
+        <gd-marker-icon [icon]="item.icon" [matTooltip]="item.name" (click)="markerClick.emit(item)" />
+      </mgl-marker>
+    }
+  </mgl-map>
+}
+<div class="bottom-right">
+  @if (!small() && (movedByUser() || filtered())) {
+    <button matButton="elevated" (click)="resetView()">
+      <mat-icon>restart_alt</mat-icon>
+      <span i18n="@@mapView.reset">Reset</span>
+    </button>
+  }
+  <div class="row">
+    @if (logo(); as logo) {
+      <gd-image [src]="logo" />
+    }
+    @if (!small()) {
+      <gd-count-gauge [count]="shownItems().length" [total]="items().length" />
+    }
+  </div>
+</div>
+<div class="bottom-left">
+  <gd-legend
+    [items]="items()"
+    [shownItems]="shownItems()"
+    [iconOf]="iconOf"
+    [labels]="legendLabels()"
+  />
+  @if (small()) {
+    <gd-count-gauge [count]="shownItems().length" [total]="items().length" />
+    @if (movedByUser() || filtered()) {
+      <button matButton="elevated" aria-label="Reset" i18n-aria-label="@@mapView.reset" (click)="resetView()">
+        <mat-icon>restart_alt</mat-icon>
+      </button>
+    }
+  }
+</div>
+

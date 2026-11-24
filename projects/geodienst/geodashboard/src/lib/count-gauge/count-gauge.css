@@ -1,0 +1,33 @@
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: var(--mat-sys-surface-container);
+  color: var(--mat-sys-on-surface);
+  border-radius: var(--mat-sys-corner-medium);
+  box-shadow: var(--mat-sys-level2);
+  font: var(--mat-sys-body-medium);
+}
+
+.ring {
+  display: grid;
+  place-items: center;
+}
+
+.ring > * {
+  grid-area: 1 / 1;
+}
+
+.count {
+  font: var(--mat-sys-title-large);
+}
+
+:host(.small) {
+  padding: 4px;
+}
+
+:host(.small) .count {
+  font: var(--mat-sys-title-small);
+}

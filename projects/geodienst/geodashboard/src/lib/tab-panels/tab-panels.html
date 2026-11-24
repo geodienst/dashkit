@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
+  @for (panel of panels(); track panel) {
+    <a mat-tab-link [active]="active() === panel" (click)="active.set(panel)">{{ panel.label() }}</a>
+  }
+</nav>
+<mat-tab-nav-panel #tabPanel>
+  <ng-content />
+</mat-tab-nav-panel>

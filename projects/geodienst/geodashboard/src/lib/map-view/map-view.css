@@ -1,0 +1,116 @@
+:host {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.bottom-right {
+  position: absolute;
+  right: 16px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* The legend, and on a smartphone the gauge and the reset button to its right, bottom-aligned. */
+.bottom-left {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+gd-legend {
+  max-width: 300px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+/* Same card look as the logo and the gauge. */
+button {
+  --mat-button-protected-container-color: var(--mat-sys-surface-container);
+  --mat-button-protected-container-shape: var(--mat-sys-corner-medium);
+  --mat-button-protected-container-elevation-shadow: var(--mat-sys-level2);
+  --mat-button-protected-label-text-color: var(--mat-sys-on-surface);
+}
+
+/* On a small screen the icon-only reset button is a 44px square, as big as the small gauge next to it. */
+.bottom-left button {
+  min-width: 44px;
+  --mat-button-protected-container-height: 44px;
+  --mat-button-protected-horizontal-padding: 0;
+  --mat-button-protected-icon-offset: 0;
+  --mat-button-protected-icon-spacing: 0;
+}
+
+.bottom-left button mat-icon {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+/* Same content height as the gauge:64px ring + 4px gap + one line of "of N" text. */
+gd-image {
+  height: calc(64px + 4px + var(--mat-sys-body-medium-line-height));
+  padding: 8px;
+  background: var(--mat-sys-surface-container);
+  border-radius: var(--mat-sys-corner-medium);
+  box-shadow: var(--mat-sys-level2);
+}
+
+/* The buttons stack like MapLibre's controls: right-aligned, 10px apart. */
+.map-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/*
+ * Buttons below MapLibre's controls look like its zoom and locate buttons: 29px high, white, slightly rounded,
+ * with MapLibre's thin grey outline instead of a Material shadow (also on hover, focus and press).
+ */
+.map-button {
+  --mat-button-protected-container-height: 29px;
+  --mat-button-protected-container-color: var(--mat-sys-surface-container-lowest);
+  --mat-button-protected-container-shape: var(--mat-sys-corner-extra-small);
+  --mat-button-protected-container-elevation-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+  --mat-button-protected-hover-container-elevation-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+  --mat-button-protected-focus-container-elevation-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+  --mat-button-protected-pressed-container-elevation-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+  --mat-button-protected-horizontal-padding: 8px;
+  --mat-button-protected-icon-offset: 0;
+  --mat-button-protected-icon-spacing: 4px;
+  --mat-button-protected-label-text-color: var(--mat-sys-on-surface);
+}
+
+/* MapLibre's icons are about 20px. */
+.map-button mat-icon {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Icon only: a 29px square like the zoom buttons; Material's 64px minimum width has no token. */
+.map-button.icon-only {
+  min-width: 29px;
+  --mat-button-protected-horizontal-padding: 0;
+  --mat-button-protected-icon-spacing: 0;
+}
+
+mgl-map {
+  display: block;
+  height: 100%;
+}
+
+gd-marker-icon {
+  cursor: pointer;
+}

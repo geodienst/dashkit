@@ -1,0 +1,13 @@
+@if (menuItem()) {
+  <!-- Stops the click, so a surrounding menu stays open while the languages are shown. -->
+  <button mat-menu-item [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
+    <mat-icon>translate</mat-icon>{{ current().name }}
+  </button>
+} @else {
+  <button mat-button [matMenuTriggerFor]="menu">{{ current().name }}</button>
+}
+<mat-menu #menu>
+  @for (language of languages(); track language.code) {
+    <a mat-menu-item [href]="'?locale=' + language.code">{{ language.name }}</a>
+  }
+</mat-menu>

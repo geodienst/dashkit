@@ -1,0 +1,54 @@
+mat-toolbar {
+  --mat-toolbar-container-background-color: var(--mat-sys-primary);
+  --mat-toolbar-container-text-color: var(--mat-sys-on-primary);
+  /* Icon buttons in the header (also inside projected components) take the text color of the title. */
+  --mat-icon-button-icon-color: var(--mat-sys-on-primary);
+  --mat-icon-button-state-layer-color: var(--mat-sys-on-primary);
+  gap: 16px;
+  box-shadow: var(--mat-sys-level2);
+}
+
+mat-toolbar > a,
+mat-toolbar > img {
+  height: 80%;
+}
+
+a > img {
+  height: 100%;
+}
+
+/* The title block may shrink, so the header never gets wider than the screen; too long texts end with "…". */
+mat-toolbar > div {
+  margin-right: auto;
+  min-width: 0;
+}
+
+h1 {
+  margin: 0;
+  font: var(--mat-sys-title-large);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+p {
+  margin: 0;
+  font: var(--mat-sys-body-medium);
+  opacity: 0.8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* On a smartphone (same breakpoint as Material's own toolbar) the title gets smaller and may use two lines. */
+@media (max-width: 599.98px) {
+  mat-toolbar {
+    gap: 8px;
+  }
+
+  h1 {
+    font: var(--mat-sys-title-small);
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+}

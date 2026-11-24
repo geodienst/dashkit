@@ -1,0 +1,11 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+/* The panels fill the space below the tab bar; position: relative lets a panel use position: absolute; inset: 0. */
+mat-tab-nav-panel {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+}

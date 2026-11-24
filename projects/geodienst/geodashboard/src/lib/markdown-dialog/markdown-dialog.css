@@ -1,0 +1,30 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+/* Floats in the top-right corner above the content. */
+.close {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 1;
+}
+
+/*
+ * Material caps the content at 65vh (no token for it). Without the cap the content fills the dialog,
+ * e.g. a dialog opened with a height, and scrolls only when the dialog reaches its maximum height.
+ */
+mat-dialog-content {
+  max-height: none;
+}
+
+/* The markdown is inserted via innerHTML, so the encapsulated styles need ::ng-deep to reach it. */
+:host ::ng-deep h1 {
+  font: var(--mat-sys-headline-small);
+}
+
+/* Large images (e.g. charts up to 1800 px wide) shrink to the dialog width. */
+:host ::ng-deep img {
+  max-width: 100%;
+}
