@@ -4,7 +4,7 @@
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "types": []
+    "types": ["@angular/localize"]
   },
   "include": ["**/*.ts"],
   "exclude": ["**/*.spec.ts"]

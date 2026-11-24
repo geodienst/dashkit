@@ -33,7 +33,8 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/geodienst/geodashboard/tsconfig.spec.json"
+            "tsConfig": "projects/geodienst/geodashboard/tsconfig.spec.json",
+            "polyfills": ["@angular/localize/init"]
           }
         }
       }
