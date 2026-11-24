@@ -1,10 +1,18 @@
 {
   "name": "@geodienst/geodashboard",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "repository": { "type": "git", "url": "https://github.com/geodienst/geodashboard" },
   "peerDependencies": {
+    "@angular/cdk": "^22.3.0",
     "@angular/common": "^22.3.0",
-    "@angular/core": "^22.3.0"
+    "@angular/core": "^22.3.0",
+    "@angular/localize": "^22.3.0",
+    "@angular/material": "^22.3.0",
+    "@maplibre/ngx-maplibre-gl": "^22.1.0",
+    "maplibre-gl": "^6.11.0",
+    "rxjs": "^7.8.0"
   },
+  "dependencies": { "marked": "^18.1.1" },
   "sideEffects": false,
   "exports": {
     ".": "./src/public-api.ts",
