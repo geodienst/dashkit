@@ -3,6 +3,10 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
+    "paths": {
+      "@geodienst/geodashboard": ["./src/public-api.ts"],
+      "@geodienst/geodashboard/testing": ["./testing/src/public-api.ts"]
+    },
     "outDir": "../../../out-tsc/spec",
     "types": ["vitest/globals"]
   },

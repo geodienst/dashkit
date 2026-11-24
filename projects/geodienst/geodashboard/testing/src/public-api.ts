@@ -2,4 +2,4 @@
  * Public API Surface of testing
  */
 
-export * from './testing';
+export * from './map-view.stubs';
