@@ -43,10 +43,10 @@ Ask the person what should come next. If they don't know, suggest a few things i
 For each wish:
 
 1. Check it against the catalogue (see step 5).
-2. Say in one or two sentences what you will build: what is where, what happens on a click. Build only after the person says yes.
-3. Build it, start the dashboard (`npm start`) and let the person look at it in the browser.
-4. Run the tests (`npm test`) yourself: the person can't judge test results.
-5. Ask whether they like what they see. If yes, save the step: commit everything with a short message in plain words that says what the step added, e.g. "Filter by category". Then ask what should come next.
+2. Build it right away, without asking first. Run the tests (`npm test`) yourself: the person can't judge test results.
+3. Start the dashboard (`npm start`) and let the person look at it in the browser.
+4. Ask whether they like what they see, and suggest a few changes they could make instead, e.g. put it on the other side, use a different icon, change a text. Suggest only changes the catalogue allows.
+5. If they want a change, make it and go back to 3. If they like it, save the step: commit everything with a short message in plain words that says what the step added, e.g. "Filter by category". Then ask what should come next.
 
 Repeat until the person says the dashboard is done.
 
