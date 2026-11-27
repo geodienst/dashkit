@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1
+
+- Published from GitHub Actions (npm trusted publishing).
+
 ## 0.2.0
 
 ### Breaking
