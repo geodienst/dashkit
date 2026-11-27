@@ -21,7 +21,8 @@ jobs:
       - run: npm test -- --watch=false
       - run: npm run build
 
-      # Only for a version tag (git tag v0.1.0; git push --tags): pack the built package and attach it to a GitHub release.
+      # Only for a version tag (git tag v0.2.1; git push --tags): pack the built package, stage it on npm and attach it to a GitHub release.
+      # The staged version goes live after approval with 2FA: npm stage approve <stage-id>, or on npmjs.com.
       - name: Pack, publish and release
         if: startsWith(github.ref, 'refs/tags/v')
         working-directory: dist/geodienst/dashkit
@@ -34,4 +35,5 @@ jobs:
             exit 1
           fi
           npm pack
+          npm stage publish
           gh release create "$GITHUB_REF_NAME" "geodienst-dashkit-$VERSION.tgz" --title "$GITHUB_REF_NAME" --generate-notes

@@ -1,6 +1,6 @@
 {
   "name": "@geodienst/dashkit",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Angular Material components for MapLibre map dashboards: map, filters, legend, lists, tables and dialogs.",
   "license": "MIT",
   "repository": { "type": "git", "url": "git+https://github.com/geodienst/dashkit.git" },
