@@ -30,6 +30,7 @@ Every component is used by several dashboards, so:
 - **Self-contained folder:** a component and everything it needs (template, styles, spec, helper types) live in its own folder.
 - **Selector prefix `gd`:** `gd-…` for components, `gd…` for directives.
 - **Public API:** a new component is exported in `src/public-api.ts`. Renaming or removing an input, output or selector is a breaking change (see Release).
+- **Catalogue:** a new component or a new option also updates `docs/create-dashboard/components.md`.
 
 If a component can't reasonably be made generic in the current step, say so in one sentence instead of over-engineering it.
 
