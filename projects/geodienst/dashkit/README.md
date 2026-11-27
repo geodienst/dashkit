@@ -7,10 +7,8 @@ All components use the `gd-` selector prefix. `src/public-api.ts` lists everythi
 
 Requires Angular 22.3 or newer with Angular Material.
 
-Until a registry is chosen, the package is installed from a tarball that the app keeps in its `vendor/` folder:
-
 ```powershell
-npm install ./vendor/geodienst-dashkit-<version>.tgz
+npm install @geodienst/dashkit
 npm install @angular/material @angular/cdk @angular/localize @maplibre/ngx-maplibre-gl maplibre-gl
 ```
 
