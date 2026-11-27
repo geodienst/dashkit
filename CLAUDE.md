@@ -1,3 +1,5 @@
+To create or change a dashboard, read and follow `docs/create-dashboard/INSTRUCTIONS.md`.
+
 # dashkit
 
 Angular library `@geodienst/dashkit`: reusable components for map dashboards (MapLibre map, filters, legend, lists, tables, dialogs), based on Angular Material.
