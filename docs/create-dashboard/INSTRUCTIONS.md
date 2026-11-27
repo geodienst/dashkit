@@ -4,6 +4,13 @@ Follow these instructions when someone wants to create or change a map dashboard
 
 While you follow them, they replace the developer rules of this repository (e.g. test-driven development, the user runs the tests): the person you work with is not a developer.
 
+All files these instructions mention are in the dashkit repository on GitHub. Read them online, at `https://raw.githubusercontent.com/geodienst/dashkit/v<version>/<path>`. Don't download the repository.
+
+`<version>` is the package version the dashboard uses:
+
+- new dashboard: the latest one (`npm view @geodienst/dashkit version`)
+- existing dashboard: the installed one (`version` in `node_modules/@geodienst/dashkit/package.json`)
+
 Before you start, check that Git and Node 26 are installed. If one is missing, install it, or guide the person through installing it, in plain words.
 
 ## 1. Talk plainly
@@ -45,7 +52,7 @@ Repeat until the person says the dashboard is done.
 
 ## 5. Check every wish against the catalogue
 
-[`components.md`](components.md) lists everything that is possible. What isn't in it isn't possible yet.
+`docs/create-dashboard/components.md` lists everything that is possible. What isn't in it isn't possible yet.
 
 - **Possible:** note which component does it.
 - **Not possible:** say clearly that it isn't possible yet. Explain that a developer could extend the library, but that this is more work. Propose the closest alternative that works now, and let the person choose.
@@ -56,11 +63,11 @@ Repeat until the person says the dashboard is done.
 
 ## 6. How to build
 
-- Create the dashboard as a new Angular app in its own folder next to this repository, e.g. `../my-dashboard`. Use the Angular version the library requires (see its `peerDependencies`).
-- Install the package from npm (`npm install @geodienst/dashkit`) and set it up as described in the [package README](../../projects/geodienst/dashkit/README.md).
-- To learn how a component is used, read its folder in `projects/geodienst/dashkit/src/lib/`: the `.ts` file lists its inputs and outputs, and the `.spec.ts` shows it in use.
+- Create the dashboard as a new Angular app in the folder the person opened. Use the Angular version the library requires (see `peerDependencies` in `projects/geodienst/dashkit/package.json`).
+- Install exactly that version from npm (`npm install @geodienst/dashkit@<version>`) and set it up as described in the package README (`projects/geodienst/dashkit/README.md`).
+- To learn how a component is used, read its files: for `gd-<name>`, `projects/geodienst/dashkit/src/lib/<name>/<name>.ts` lists its inputs and outputs, and `<name>.spec.ts` next to it shows it in use.
 - The dashboard loads its data itself. A Google Sheet shared as "Anyone with the link can view" is available as CSV at `https://docs.google.com/spreadsheets/d/<sheet id>/gviz/tq?tqx=out:csv`.
-- Never change the library or anything else in this repository.
+- Never change the library.
 
 ## 7. Hand over
 
@@ -69,10 +76,8 @@ Write in the new dashboard folder:
 - `AGENTS.md` (read by most AI tools) and `CLAUDE.md` (read by Claude Code), each with only this line, so that an AI session started later in the dashboard folder finds these instructions again:
 
   ```markdown
-  To change this dashboard, read and follow `<path>` (in the `@geodienst/dashkit` repository).
+  To change this dashboard, read and follow https://raw.githubusercontent.com/geodienst/dashkit/master/docs/create-dashboard/INSTRUCTIONS.md
   ```
-
-  `<path>` is the relative path from the dashboard folder to this file, as it actually is on this computer.
 
 - a `README.md` in plain words: how to start the dashboard and how to update its data.
 

@@ -9,7 +9,7 @@ Building blocks for map dashboards: a map with markers, filters, a legend, lists
 2. Create an empty folder for your dashboard and open it in OpenCode.
 3. Paste this message:
 
-   > Make sure Git and Node 26 are installed, and install them if not. Then download <https://github.com/geodienst/dashkit> into this folder, read `dashkit/docs/create-dashboard/INSTRUCTIONS.md` and follow it. I want to create a dashboard.
+   > Make sure Git and Node 26 are installed, and install them if not. Then read <https://raw.githubusercontent.com/geodienst/dashkit/master/docs/create-dashboard/INSTRUCTIONS.md> and follow it. I want to create a dashboard.
 
 Have ready: your data (e.g. a Google Sheet with coordinates), the texts you want to show, and a logo.
 The AI asks you what the dashboard should show and builds it step by step. If something isn't possible yet, it tells you and suggests an alternative.
