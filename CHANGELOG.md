@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0
+
+### Added
+
+- A guide for creating a dashboard with an AI coding assistant, without programming: `docs/create-dashboard/` in the repository, with a plain-language catalogue of all components.
+  The package README explains how to get started. The components themselves are unchanged.
+
 ## 0.2.1
 
 - Published from GitHub Actions (npm trusted publishing).

@@ -4,6 +4,8 @@ Follow these instructions when someone wants to create or change a map dashboard
 
 While you follow them, they replace the developer rules of this repository (e.g. test-driven development, the user runs the tests): the person you work with is not a developer.
 
+Before you start, check that Git and Node 26 are installed. If one is missing, install it, or guide the person through installing it, in plain words.
+
 ## 1. Talk plainly
 
 - The person can't program. Don't show code and don't use technical terms.

@@ -1,9 +1,26 @@
 # @geodienst/dashkit
 
-Angular components for map dashboards: a MapLibre map, filters, legend, lists, tables and dialogs, based on Angular Material.
-All components use the `gd-` selector prefix. [`src/public-api.ts`](https://github.com/geodienst/dashkit/blob/master/projects/geodienst/dashkit/src/public-api.ts) lists everything the package exports.
+Building blocks for map dashboards: a map with markers, filters, a legend, lists, tables and dialogs.
 
-## Installation
+## Create your own dashboard (no programming needed)
+
+1. Install the AI assistant [OpenCode](https://opencode.ai) and connect it to an AI provider when it asks. It works on your computer, so it can build the dashboard for you.
+   Other AI coding assistants (e.g. Claude Code) work too; a plain chat AI like ChatGPT in the browser isn't enough.
+2. Create an empty folder for your dashboard and open it in OpenCode.
+3. Paste this message:
+
+   > Make sure Git and Node 26 are installed, and install them if not. Then download <https://github.com/geodienst/dashkit> into this folder, read `dashkit/docs/create-dashboard/INSTRUCTIONS.md` and follow it. I want to create a dashboard.
+
+Have ready: your data (e.g. a Google Sheet with coordinates), the texts you want to show, and a logo.
+The AI asks you what the dashboard should show and builds it step by step. If something isn't possible yet, it tells you and suggests an alternative.
+
+## For developers
+
+Everything below is for developers, and for the AI assistant that builds a dashboard for you. If you don't program, you can stop reading here.
+
+Angular components based on Angular Material and MapLibre. All components use the `gd-` selector prefix. [`src/public-api.ts`](https://github.com/geodienst/dashkit/blob/master/projects/geodienst/dashkit/src/public-api.ts) lists everything the package exports.
+
+### Installation
 
 Requires Angular 22.3 or newer with Angular Material.
 
@@ -14,7 +31,7 @@ npm install @angular/material @angular/localize maplibre-gl
 
 npm installs the other peer dependencies automatically. The second line adds the ones the app uses directly (see *Setup*) to its own `package.json`.
 
-## Setup
+### Setup
 
 `angular.json`, in the app's `build` options:
 
@@ -30,7 +47,7 @@ npm installs the other peer dependencies automatically. The second line adds the
 - `src/theme.scss` is the app's Angular Material theme. The components take all colors and fonts from it.
 - `main.ts` tells MapLibre where its worker is: `setWorkerUrl('maplibre/maplibre-gl-worker.mjs')` (from `maplibre-gl`).
 
-## Translations
+### Translations
 
 The component texts are translated into de, fr, es, tr, bg and el. The package ships them as `locale/messages.<lang>.xlf`.
 
@@ -42,7 +59,7 @@ The component texts are translated into de, fr, es, tr, bg and el. The package s
   "de": ["node_modules/@geodienst/dashkit/locale/messages.de.xlf", "src/locale/messages.de.xlf"]
   ```
 
-## Tests in the app
+### Tests in the app
 
 jsdom has no WebGL, so app tests replace the MapLibre components with stubs:
 
