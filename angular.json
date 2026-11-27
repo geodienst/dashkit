@@ -18,7 +18,10 @@
           "options": {
             "tsConfig": "projects/geodienst/dashkit/tsconfig.lib.json",
             "outputPath": "dist/geodienst/dashkit",
-            "assets": [{ "glob": "*.xlf", "input": "projects/geodienst/dashkit/src/lib/locale", "output": "locale" }],
+            "assets": [
+              { "glob": "*.xlf", "input": "projects/geodienst/dashkit/src/lib/locale", "output": "locale" },
+              { "glob": "LICENSE", "input": ".", "output": "." }
+            ],
             "allowedNonPeerDependencies": ["marked"]
           },
           "configurations": {
