@@ -102,8 +102,13 @@ Angular updates: the library is updated first (peer dependency ranges, release),
 1. Bump `version` in `projects/geodienst/dashkit/package.json`.
 2. Update `CHANGELOG.md`.
 3. Commit and push, then `git tag v<version>` and `git push --tags`.
-4. CI (`.github/workflows/ci.yml`) tests, builds and packs the tag, and creates a GitHub release with the tarball attached. It fails if the tag doesn't match the version.
-5. Until a registry is chosen, the apps install the tarball from their `vendor/` folder. Delete the old tarball there, then run `gh release download v<version> --repo geodienst/dashkit --pattern "*.tgz" --dir vendor` and `npm install ./vendor/<tarball>`.
+4. CI (`.github/workflows/ci.yml`) tests, builds and packs the tag, stages it on npmjs.com (trusted publishing, no token) and creates a GitHub release with the tarball attached. It fails if the tag doesn't match the version.
+5. The user approves the staged version with 2FA. Only then it is live. Either:
+   - in the npmjs.com UI: on the package page (logged in), approve the staged version, or
+   - on the command line: `npm stage list @geodienst/dashkit`, then `npm stage approve <stage-id>`.
+6. The apps update with `npm install @geodienst/dashkit@<version>`.
+
+A version can't be published twice: if a release fails after it reached npm, bump the version.
 
 ## Git
 
