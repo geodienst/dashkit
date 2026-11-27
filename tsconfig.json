@@ -4,8 +4,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@geodienst/geodashboard": ["./dist/geodienst/geodashboard"],
-      "@geodienst/geodashboard/*": ["./dist/geodienst/geodashboard/*"]
+      "@geodienst/dashkit": ["./dist/geodienst/dashkit"],
+      "@geodienst/dashkit/*": ["./dist/geodienst/dashkit/*"]
     },
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -26,10 +26,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/geodienst/geodashboard/tsconfig.lib.json"
+      "path": "./projects/geodienst/dashkit/tsconfig.lib.json"
     },
     {
-      "path": "./projects/geodienst/geodashboard/tsconfig.spec.json"
+      "path": "./projects/geodienst/dashkit/tsconfig.spec.json"
     }
   ]
 }

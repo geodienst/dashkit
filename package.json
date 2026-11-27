@@ -1,10 +1,10 @@
 {
-  "name": "geodashboard",
+  "name": "dashkit",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build @geodienst/geodashboard",
+    "build": "ng build @geodienst/dashkit",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

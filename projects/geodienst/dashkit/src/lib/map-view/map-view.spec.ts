@@ -6,7 +6,7 @@ import { MatButtonHarness } from '@angular/material/button/testing';
 import { MatTooltip } from '@angular/material/tooltip';
 import { StyleSpecification } from 'maplibre-gl';
 import { MapButton, MapItem, MapView } from './map-view';
-import { ControlStub, GeolocateStub, MapStub, NavigationStub, ScaleStub, stubMapLibre } from '@geodienst/geodashboard/testing';
+import { ControlStub, GeolocateStub, MapStub, NavigationStub, ScaleStub, stubMapLibre } from '@geodienst/dashkit/testing';
 
 const style: StyleSpecification = { version: 8, sources: {}, layers: [] };
 

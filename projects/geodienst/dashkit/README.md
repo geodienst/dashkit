@@ -1,4 +1,4 @@
-# @geodienst/geodashboard
+# @geodienst/dashkit
 
 Angular components for map dashboards: a MapLibre map, filters, legend, lists, tables and dialogs, based on Angular Material.
 All components use the `gd-` selector prefix. `src/public-api.ts` lists everything the package exports.
@@ -10,7 +10,7 @@ Requires Angular 22.3 or newer with Angular Material.
 Until a registry is chosen, the package is installed from a tarball that the app keeps in its `vendor/` folder:
 
 ```powershell
-npm install ./vendor/geodienst-geodashboard-<version>.tgz
+npm install ./vendor/geodienst-dashkit-<version>.tgz
 npm install @angular/material @angular/cdk @angular/localize @maplibre/ngx-maplibre-gl maplibre-gl
 ```
 
@@ -21,7 +21,7 @@ npm install @angular/material @angular/cdk @angular/localize @maplibre/ngx-mapli
 ```json
 "assets": [
   { "glob": "maplibre-gl-{worker,shared}.mjs", "input": "node_modules/maplibre-gl/dist", "output": "maplibre" },
-  { "glob": "messages.*.xlf", "input": "node_modules/@geodienst/geodashboard/locale", "output": "locale/components" }
+  { "glob": "messages.*.xlf", "input": "node_modules/@geodienst/dashkit/locale", "output": "locale/components" }
 ],
 "styles": ["node_modules/maplibre-gl/dist/maplibre-gl.css", "src/theme.scss"],
 "polyfills": ["@angular/localize/init"]
@@ -39,7 +39,7 @@ The component texts are translated into de, fr, es, tr, bg and el. The package s
 - With build-time translations, add the package file first in `i18n.locales`:
 
   ```json
-  "de": ["node_modules/@geodienst/geodashboard/locale/messages.de.xlf", "src/locale/messages.de.xlf"]
+  "de": ["node_modules/@geodienst/dashkit/locale/messages.de.xlf", "src/locale/messages.de.xlf"]
   ```
 
 ## Tests in the app
@@ -47,5 +47,5 @@ The component texts are translated into de, fr, es, tr, bg and el. The package s
 jsdom has no WebGL, so app tests replace the MapLibre components with stubs:
 
 ```ts
-import { stubMapLibre } from '@geodienst/geodashboard/testing';
+import { stubMapLibre } from '@geodienst/dashkit/testing';
 ```

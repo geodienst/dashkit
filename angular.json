@@ -7,18 +7,18 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "@geodienst/geodashboard": {
+    "@geodienst/dashkit": {
       "projectType": "library",
-      "root": "projects/geodienst/geodashboard",
-      "sourceRoot": "projects/geodienst/geodashboard",
+      "root": "projects/geodienst/dashkit",
+      "sourceRoot": "projects/geodienst/dashkit",
       "prefix": "gd",
       "architect": {
         "build": {
           "builder": "@angular/build:library",
           "options": {
-            "tsConfig": "projects/geodienst/geodashboard/tsconfig.lib.json",
-            "outputPath": "dist/geodienst/geodashboard",
-            "assets": [{ "glob": "*.xlf", "input": "projects/geodienst/geodashboard/src/lib/locale", "output": "locale" }],
+            "tsConfig": "projects/geodienst/dashkit/tsconfig.lib.json",
+            "outputPath": "dist/geodienst/dashkit",
+            "assets": [{ "glob": "*.xlf", "input": "projects/geodienst/dashkit/src/lib/locale", "output": "locale" }],
             "allowedNonPeerDependencies": ["marked"]
           },
           "configurations": {
@@ -33,7 +33,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/geodienst/geodashboard/tsconfig.spec.json",
+            "tsConfig": "projects/geodienst/dashkit/tsconfig.spec.json",
             "polyfills": ["@angular/localize/init"]
           }
         }

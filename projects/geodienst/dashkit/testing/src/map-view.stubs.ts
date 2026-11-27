@@ -8,7 +8,7 @@ import {
   NavigationControlDirective,
   ScaleControlDirective,
 } from '@maplibre/ngx-maplibre-gl';
-import { MapView } from '@geodienst/geodashboard';
+import { MapView } from '@geodienst/dashkit';
 
 // MapLibre needs WebGL, which the test DOM does not have, so the map, marker and controls are replaced by plain stand-ins.
 @Component({ selector: 'mgl-map', template: '<ng-content />' })

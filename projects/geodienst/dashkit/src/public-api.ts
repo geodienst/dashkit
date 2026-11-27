@@ -1,5 +1,5 @@
 /*
- * Public API Surface of geodashboard
+ * Public API Surface of dashkit
  */
 
 export * from './lib/count-gauge/count-gauge';

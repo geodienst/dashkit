@@ -1,19 +1,19 @@
-# Geodashboard
+# dashkit
 
-Angular library `@geodienst/geodashboard`: reusable components for map dashboards (MapLibre map, filters, legend, lists, tables, dialogs), based on Angular Material.
+Angular library `@geodienst/dashkit`: reusable components for map dashboards (MapLibre map, filters, legend, lists, tables, dialogs), based on Angular Material.
 The components come from the Equicares dashboard (`mental_health_dashboard`), which is the first app that uses the package.
 
-- `projects/geodienst/geodashboard/` – the library
+- `projects/geodienst/dashkit/` – the library
   - `src/lib/<component>/` – one folder per component
   - `src/lib/locale/messages.<lang>.xlf` – translations of the component texts, shipped as `locale/` in the package
   - `src/public-api.ts` – everything the main entry point exports; a new component must be added here
-  - `testing/src/` – secondary entry point `@geodienst/geodashboard/testing` (MapLibre stubs for app tests)
+  - `testing/src/` – secondary entry point `@geodienst/dashkit/testing` (MapLibre stubs for app tests)
   - `package.json` – the package manifest: name, version, peer dependencies
 - `package.json` (root) – the workspace: dev tooling and the packages needed to build and test; never published
 
 ```powershell
 npm test        # unit tests (Vitest)
-npm run build   # builds the package to dist/geodienst/geodashboard
+npm run build   # builds the package to dist/geodienst/dashkit
 ```
 
 ## Components
@@ -54,7 +54,7 @@ Pure refactorings (no behaviour change) and config/styling changes need no new t
 - `$localize` comes from the `@angular/localize/init` polyfill of the test target in `angular.json`.
 - jsdom has no WebGL, so MapLibre components (`mgl-map`, `mgl-marker`) are replaced by the stubs from `testing/src/map-view.stubs.ts` (`stubMapLibre()`).
 - jsdom has no `matchMedia`; specs that need it stub it with `vi.stubGlobal('matchMedia', …)`.
-- `tsconfig.spec.json` maps `@geodienst/geodashboard` and `…/testing` to the sources, so the tests run without a build.
+- `tsconfig.spec.json` maps `@geodienst/dashkit` and `…/testing` to the sources, so the tests run without a build.
 
 ## Styling
 
@@ -99,11 +99,11 @@ No full test bodies, no alternatives, no long context section.
 Versions follow semver. Breaking changes (renamed or removed inputs, outputs, selectors) bump the major version; in 0.x the minor version counts as breaking.
 Angular updates: the library is updated first (peer dependency ranges, release), then the apps.
 
-1. Bump `version` in `projects/geodienst/geodashboard/package.json`.
+1. Bump `version` in `projects/geodienst/dashkit/package.json`.
 2. Update `CHANGELOG.md`.
 3. Commit and push, then `git tag v<version>` and `git push --tags`.
 4. CI (`.github/workflows/ci.yml`) tests, builds and packs the tag, and creates a GitHub release with the tarball attached. It fails if the tag doesn't match the version.
-5. Until a registry is chosen, the apps install the tarball from their `vendor/` folder. Delete the old tarball there, then run `gh release download v<version> --repo geodienst/geodashboard --pattern "*.tgz" --dir vendor` and `npm install ./vendor/<tarball>`.
+5. Until a registry is chosen, the apps install the tarball from their `vendor/` folder. Delete the old tarball there, then run `gh release download v<version> --repo geodienst/dashkit --pattern "*.tgz" --dir vendor` and `npm install ./vendor/<tarball>`.
 
 ## Git
 
