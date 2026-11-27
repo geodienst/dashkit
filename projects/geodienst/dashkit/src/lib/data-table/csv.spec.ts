@@ -35,12 +35,12 @@ describe('toCsv', () => {
 
   it('puts an apostrophe in front of cells that Excel would read as a formula', () => {
     const cities = [
-      { name: '+33 235 078210', country: '-' },
+      { name: '+33 1 00 00 00 00', country: '-' },
       { name: '=1+1', country: ' @SUM(A1)' },
     ];
 
     expect(toCsv(cities, columns)).toBe(
-      `"Name","Country"\r\n"'+33 235 078210","'-"\r\n"'=1+1","'@SUM(A1)"`,
+      `"Name","Country"\r\n"'+33 1 00 00 00 00","'-"\r\n"'=1+1","'@SUM(A1)"`,
     );
   });
 });

@@ -1,7 +1,7 @@
 # @geodienst/dashkit
 
 Angular components for map dashboards: a MapLibre map, filters, legend, lists, tables and dialogs, based on Angular Material.
-All components use the `gd-` selector prefix. `src/public-api.ts` lists everything the package exports.
+All components use the `gd-` selector prefix. [`src/public-api.ts`](https://github.com/geodienst/dashkit/blob/master/projects/geodienst/dashkit/src/public-api.ts) lists everything the package exports.
 
 ## Installation
 
@@ -9,8 +9,10 @@ Requires Angular 22.3 or newer with Angular Material.
 
 ```powershell
 npm install @geodienst/dashkit
-npm install @angular/material @angular/cdk @angular/localize @maplibre/ngx-maplibre-gl maplibre-gl
+npm install @angular/material @angular/localize maplibre-gl
 ```
+
+npm installs the other peer dependencies automatically. The second line adds the ones the app uses directly (see *Setup*) to its own `package.json`.
 
 ## Setup
 

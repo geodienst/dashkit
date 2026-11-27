@@ -1,7 +1,7 @@
 # dashkit
 
 Angular library `@geodienst/dashkit`: reusable components for map dashboards (MapLibre map, filters, legend, lists, tables, dialogs), based on Angular Material.
-The components come from the Equicares dashboard (`mental_health_dashboard`), which is the first app that uses the package.
+The components come from the first app that uses the package.
 
 - `projects/geodienst/dashkit/` – the library
   - `src/lib/<component>/` – one folder per component

@@ -14,7 +14,7 @@ import { MatTooltip } from '@angular/material/tooltip';
 export class CountryFilter {
   readonly title = input<string>();
   readonly subtitle = input<string>();
-  // Number of providers per country; one toggle per key.
+  // Count per country; one toggle per key.
   readonly counts = input<Record<string, number>>({});
   readonly selected = model<string[]>([]);
   readonly hideCount = input(false);
