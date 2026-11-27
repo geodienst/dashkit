@@ -34,7 +34,7 @@ Everything else (filters, lists, icons, texts, languages, look) comes later, ste
 
 ## 3. Show a first draft
 
-As soon as the data is usable, build a page with only the title and a map that shows one marker per item (see "How to build" below). Start it and let the person look at it in the browser.
+As soon as the data is usable, build a page with only the title and a map that shows one marker per item (see "How to build" below). Start it and let the person look at it in the browser. When they like it, save it as described in step 4.
 
 ## 4. Build together, step by step
 
@@ -46,9 +46,18 @@ For each wish:
 2. Say in one or two sentences what you will build: what is where, what happens on a click. Build only after the person says yes.
 3. Build it, start the dashboard (`npm start`) and let the person look at it in the browser.
 4. Run the tests (`npm test`) yourself: the person can't judge test results.
-5. Ask whether it is what they wanted, then ask what should come next.
+5. Ask whether they like what they see. If yes, save the step: commit everything with a short message in plain words that says what the step added, e.g. "Filter by category". Then ask what should come next.
 
 Repeat until the person says the dashboard is done.
+
+### Going back
+
+If the person wants to go back, e.g. after a mistake or because they don't like a change:
+
+1. Read the Git history and show it as a numbered list of the saved steps in plain words, newest first, with date and time.
+2. Ask to which step the dashboard should go back. Changes that aren't saved yet are lost; say so.
+3. Discard the changes that aren't saved yet, go back with `git revert --no-commit <chosen step>..HEAD` and commit with a message like "Back to: Filter by category". So the history keeps everything, and the person can later also go back to a step after the chosen one.
+4. Start the dashboard and let the person look at it.
 
 ## 5. Check every wish against the catalogue
 
@@ -63,7 +72,7 @@ Repeat until the person says the dashboard is done.
 
 ## 6. How to build
 
-- Create the dashboard as a new Angular app in the folder the person opened. Use the Angular version the library requires (see `peerDependencies` in `projects/geodienst/dashkit/package.json`).
+- Create the dashboard as a new Angular app in the folder the person opened. It must be a Git repository (`ng new` creates one, if Git is installed). Use the Angular version the library requires (see `peerDependencies` in `projects/geodienst/dashkit/package.json`).
 - Install exactly that version from npm (`npm install @geodienst/dashkit@<version>`) and set it up as described in the package README (`projects/geodienst/dashkit/README.md`).
 - To learn how a component is used, read its files: for `gd-<name>`, `projects/geodienst/dashkit/src/lib/<name>/<name>.ts` lists its inputs and outputs, and `<name>.spec.ts` next to it shows it in use.
 - The dashboard loads its data itself. A Google Sheet shared as "Anyone with the link can view" is available as CSV at `https://docs.google.com/spreadsheets/d/<sheet id>/gviz/tq?tqx=out:csv`.
