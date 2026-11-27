@@ -12,20 +12,38 @@ Before you start, check that Git and Node 26 are installed. If one is missing, i
 - Ask one question at a time.
 - Show results in the browser instead of explaining code.
 
-## 2. Ask first, build later
+## 2. Get the data
 
-Ask about, one after another:
+The goal is to show a first draft as early as possible. So ask only what that draft needs, one after another:
 
 - the purpose of the dashboard and who will use it
+- the title
 - the data: where it is (e.g. a Google Sheet or a CSV file). Ask for a sample and check that it is usable:
   - one row per item
   - a name, a longitude and a latitude per row
-  - something to choose the icon from, e.g. a column with a category
   - a Google Sheet must be shared as "Anyone with the link can view"
-- what the map shows, which filters, lists and tables there are
-- texts (e.g. an FAQ or instructions), languages, and the look: title, logo, colors
 
-## 3. Check every wish against the catalogue
+Everything else (filters, lists, icons, texts, languages, look) comes later, step by step.
+
+## 3. Show a first draft
+
+As soon as the data is usable, build a page with only the title and a map that shows one marker per item (see "How to build" below). Start it and let the person look at it in the browser.
+
+## 4. Build together, step by step
+
+Ask the person what should come next. If they don't know, suggest a few things in plain words, e.g. a filter, a list, a table, icons per category, a legend, a text like an FAQ, other languages, a logo or colors.
+
+For each wish:
+
+1. Check it against the catalogue (see step 5).
+2. Say in one or two sentences what you will build: what is where, what happens on a click. Build only after the person says yes.
+3. Build it, start the dashboard (`npm start`) and let the person look at it in the browser.
+4. Run the tests (`npm test`) yourself: the person can't judge test results.
+5. Ask whether it is what they wanted, then ask what should come next.
+
+Repeat until the person says the dashboard is done.
+
+## 5. Check every wish against the catalogue
 
 [`components.md`](components.md) lists everything that is possible. What isn't in it isn't possible yet.
 
@@ -36,23 +54,13 @@ Ask about, one after another:
   - **later:** collect the wish in `WISHES.md` in the dashboard folder, and remind them of the open wishes at the hand-over.
   - **not at all:** drop the wish and don't bring it up again.
 
-## 4. Confirm the plan
-
-Summarize the page in plain words: what is where, what can be filtered, what happens on a click. Build only after the person says yes.
-
-## 5. Build
+## 6. How to build
 
 - Create the dashboard as a new Angular app in its own folder next to this repository, e.g. `../my-dashboard`. Use the Angular version the library requires (see its `peerDependencies`).
 - Install the package from npm (`npm install @geodienst/dashkit`) and set it up as described in the [package README](../../projects/geodienst/dashkit/README.md).
 - To learn how a component is used, read its folder in `projects/geodienst/dashkit/src/lib/`: the `.ts` file lists its inputs and outputs, and the `.spec.ts` shows it in use.
 - The dashboard loads its data itself. A Google Sheet shared as "Anyone with the link can view" is available as CSV at `https://docs.google.com/spreadsheets/d/<sheet id>/gviz/tq?tqx=out:csv`.
 - Never change the library or anything else in this repository.
-
-## 6. Show and iterate
-
-- Work in small steps. After each step, start the dashboard (`npm start`) and let the person look at it in the browser.
-- Run the tests (`npm test`) yourself: the person can't judge test results.
-- Ask whether the step is what they wanted before going on.
 
 ## 7. Hand over
 
